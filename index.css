@@ -177,7 +177,6 @@ nav {
 }
 
 #featured {
-  /* margin: 0 5%; */
   .container {
     width: 100%;
     justify-content: space-between;
@@ -185,7 +184,7 @@ nav {
     padding: 20px 104px 40px 104px;
     height: 800px;
     .flex-container {
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
       width: 100%;
       height: 100%;
@@ -193,23 +192,13 @@ nav {
         background-color: #ffffff;
         justify-content: space-between;
         align-items: start;
-        width: 333px;
+        width: 24%;
         height: 80%;
         .flex-container {
           padding: 32px 20px 20px 32px;
           justify-content: space-between;
           align-items: start;
           flex-direction: column;
-          /* HERE */
-          .flex-content {
-            justify-content: start;
-            align-items: start;
-            img {
-              width: 100%;
-              height: 100%;
-              /* object-fit: cover; */
-            }
-          }
         }
         .flex-content {
           justify-content: start;
@@ -217,7 +206,6 @@ nav {
           img {
             width: 100%;
             height: 100%;
-            /* object-fit: cover; */
           }
         }
       }
@@ -292,12 +280,18 @@ nav {
     padding: 0px 104px 40px 104px;
     justify-content: space-between;
     align-items: space-between;
+    div:nth-child(1),
+    div:nth-child(2) {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
     .flex-container {
       justify-content: space-evenly;
       align-items: center;
-      width: 49.25%;
+      width: 100%;
       height: 100%;
       .flex-container-column {
+        margin: 10px;
         background-color: #ffffff;
         justify-content: space-between;
         align-items: start;
@@ -305,13 +299,13 @@ nav {
         img {
           width: 100%;
           height: 100%;
+          max-height: 100%;
         }
         .flex-container {
           padding: 32px 20px 20px 32px;
           justify-content: space-between;
           align-items: start;
           flex-direction: column;
-          /* HERE */
           .flex-content {
             justify-content: start;
             align-items: start;
@@ -333,61 +327,95 @@ nav {
 
 #spectacles {
   width: 100%;
-  height: 800px;
+  height: 680px;
   h2 {
     text-align: center;
     padding-top: 48px;
     padding-bottom: 20px;
   }
   .container {
-    /* width: 100%; */
-    height: 75%;
+    width: 100%;
+    height: 560px;
+    display: flex;
     padding: 0px 104px 40px 104px;
-    justify-content: space-between;
+    justify-content: start;
     align-items: start;
-    .first {
-      width: 49%;
+    div:nth-child(1) {
+      flex-grow: 2;
+      flex-basis: 0;
     }
-    .second {
-      width: 24%;
+
+    div:nth-child(2),
+    div:nth-child(3) {
+      flex-grow: 1;
+      flex-basis: 0;
     }
-    .third {
-      width: 24%;
-    }
+
     .flex-container {
-      justify-content: space-evenly;
+      justify-content: start;
       align-items: start;
-      /* width: 100%; */
+      width: 100%;
       height: 100%;
+      /* > div:nth-child(1) {
+        height: 350px;
+      } */
       .flex-container-column {
         background-color: #ffffff;
         justify-content: space-between;
         align-items: start;
         height: 100%;
-      img {
-        width: 100%;
-        /* height: 383px; */
-      }
+        margin: 10px;
 
-      .flex-container {
-        padding: 32px 20px 20px 32px;
-        justify-content: space-between;
-        align-items: start;
-        flex-direction: column;
-        .flex-content {
-          justify-content: start;
-          align-items: start;
-        }
-      }
-      .flex-content {
-        padding: 4px 12px 12px 12px;
-        /* justify-content: start;
-          align-items: start; */
         img {
           width: 100%;
           height: 100%;
+          max-height: 350px;
+          max-width: 100%;
+        }
+        .flex-container {
+          padding: 32px 20px 20px 32px;
+          justify-content: space-between;
+          align-items: start;
+          flex-direction: column;
+          .flex-content {
+            justify-content: start;
+            align-items: start;
+          }
         }
       }
     }
   }
+}
+
+#boutique {
+  h2 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .img-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .flex-container-column {
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    height: 200px;
+    max-width: 30%;
+    justify-content: space-between;
+  }
+}
+
+#films {
+    
 }
