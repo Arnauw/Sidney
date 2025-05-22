@@ -8,6 +8,22 @@
   font-style: normal;
 }
 
+:root {
+  --header-font-family: InspireTWDC, AvenirNext, Matterhorn, InspireTWDC,
+    Helvetica, sans-serif;
+  --header-font-weight: 400;
+  --header-font-style: normal;
+  --body-font-family: InspireTWDC, AvenirNext, Matterhorn, InspireTWDC,
+    Helvetica, sans-serif;
+  --body-font-weight: 400;
+  --body-font-style: normal;
+  --globalfooter-font-family: InspireTWDC, AvenirNext, Matterhorn, InspireTWDC,
+    Helvetica, sans-serif;
+  --globalfooter-font-weight: 400;
+  --globalfooter-font-style: normal;
+  --color-blue: #0077da;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +34,11 @@
 header,
 main,
 footer {
-  font-family: "Matterhorn", sans-serif;
+  /* font-family: "Matterhorn", sans-serif; */
   margin: 0 7%;
   background-color: #f1f2f3;
+  font-family: var(--body-font-family);
+  font-style: var(--body-font-style);
 }
 
 ul {
@@ -57,13 +75,15 @@ h1 {
 }
 
 nav {
-  height: 63px;
+  font-family: var(--header-font-family);
+  font-weight: 700;
   font-weight: 700;
   line-height: 15.4px;
   text-align: left;
   font-size: 14px;
   white-space: nowrap;
   text-transform: uppercase;
+  height: 63px;
   ul {
     height: 63px;
     margin-left: 10px;
@@ -74,6 +94,9 @@ nav {
         padding: 12px 20px 10px 12px;
         text-decoration: none;
         color: #000;
+        &:hover {
+          color: var(--color-blue);
+        }
         img {
           width: 95px;
           height: 40px;
@@ -118,28 +141,33 @@ nav {
         align-items: center;
         display: flex;
         span {
-          font-size: 16px;
-          font-style: normal;
+          font-size: 1em;
+          font-family: var(--body-font-family);
+          font-style: var(--body-font-style);
           font-weight: 400;
           line-height: 24px;
           color: rgb(0, 0, 0);
           text-align: center;
         }
         .blue-button {
-          line-height: 16px;
+          background-color: #5a6996;
+          border-color: #5a6996;
+          color: #fff;
+          margin-left: 12px;
+          margin-right: 12px;
+          border: 1px solid #0077da;
+          font-weight: 600;
           border-radius: 24px;
           height: 48px;
-          min-width: 280px;
-          width: 240px;
-          color: white;
-          font-weight: 600;
-          box-shadow: none;
-          background-color: #53618a;
-          margin: 12px;
-          padding: 16px 36px;
-          text-align: center;
+          min-width: 240px;
+          font-size: 1rem;
+          padding: 16px 32px;
+          line-height: 16px;
+          font-family: var(--body-font-family);
+          font-style: var(--body-font-style);
         }
         .button {
+          font-size: 1rem;
           align-items: center;
           align-self: center;
           line-height: 16px;
@@ -155,6 +183,8 @@ nav {
           border-width: px;
           border: 1px solid #1d1e1f;
           text-align: center;
+          font-family: var(--body-font-family);
+          font-style: var(--body-font-style);
         }
       }
     }
@@ -194,11 +224,30 @@ nav {
         align-items: start;
         width: 24%;
         height: 80%;
+        h2 {
+          color: #222;
+          font-size: 1.25em;
+          line-height: 1.2;
+          font-family: var(--header-font-family);
+          font-weight: var(--header-font-weight);
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+        }
+        h3 {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 15.6px;
+          text-transform: uppercase
+        }
         .flex-container {
           padding: 32px 20px 20px 32px;
           justify-content: space-between;
           align-items: start;
           flex-direction: column;
+          color: rgb(34, 34, 34)
         }
         .flex-content {
           justify-content: start;
@@ -388,7 +437,7 @@ nav {
 }
 
 #boutique {
-    padding: 0px 104px 40px 104px;
+  padding: 0px 104px 40px 104px;
   h2 {
     text-align: center;
     padding-top: 20px;
@@ -446,27 +495,78 @@ nav {
 }
 
 #morenews {
-    padding: 0px 104px 40px 104px;
-    h2 {
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    .flex-container {
-        display: flex;
-        justify-content: start;
-        align-items: start;
-        gap: 20px;
+  padding: 0px 104px 40px 104px;
+
+  width: 100%;
+  h2 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .container {
+    position: relative;
+    width: 100%;
+    .img-container {
+      img {
         width: 100%;
-        height: 100%;
-        .flex-container-column {
-        flex-grow: 1;
-        img {
-            max-width: 100%;
-        }
-        h3 {
-            margin: 10px;
-        }
-        }
+        height: auto;
+      }
     }
+  }
+
+  .flex-container-column {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    .flex-content {
+      max-width: 592px;
+      h3 {
+        color: white;
+        font-size: 2.5em;
+        text-align: center;
+      }
+      .white-button {
+        line-height: 16px;
+        border-radius: 24px;
+        /* border: 1px solid #1d1e1f; */
+        height: 48px;
+        min-width: 200px;
+        width: 240px;
+        color: black;
+        font-weight: 600;
+        box-shadow: none;
+        background-color: #ffffff;
+        margin: 32px;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #ffffff;
+  height: 300px;
+  .flex-container-column {
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .follow-disney {
+    display: flex;
+  }
+  .footer-menu {
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  }
 }
