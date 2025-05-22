@@ -500,7 +500,6 @@ nav {
     top: 50%;
     + label {
       position: absolute;
-      /* top: 0; */
       top: 35%;
       transform: translateY(-35%);
       right: 104px;
@@ -512,10 +511,15 @@ nav {
       background-color: white;
       border: none; 
       box-shadow: 0px 2px 6px black;
+      padding: 10px;
+    }
+    &:checked + label{
+        right: 0;
+        left: 80px;
     }
     &:checked + label > img {
-      width: 300px;
-      height: 300px;
+      transform: rotate(180deg);
+      box-shadow: 0px -2px 6px black;
     }
   }
 }
